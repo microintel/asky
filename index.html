@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color:black;
+    }
+    
+    .cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .mdiv {
+      background-color: white;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      margin: 0;
+      color: #333333;
+      text-align: center;
+    }
+    
+    h6 {
+      margin: 0;
+      color:black;
+      text-align: center;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #resu {
+      margin-top: 20px;
+      padding: 10px;
+      background-color:white;
+      border-radius: 5px;
+    }
+    
+    .result-item {
+      margin-top: 10px;
+    }
+    
+    .result-item div {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<div class="cont">
+  <div class="mdiv">
+    <h6>microintel</h6>
+    <h1>ASKY</h1>
+    
+    <div id="resu"><img id="im" src="load.gif" style="display:none;" width="100px" height="100px"></div>
+    
+    <input oninput="di()" type="text" id="inp" placeholder="Enter message">
+    <button onclick="search()">Send</button>
+    
+  </div>
+</div>
+<script>
+function di(){
+document.getElementById("resu").style.display="block";
+document.getElementById("im").style.display="block";
+}
+  function search() {
+    const apiKey ='AIzaSyCe8iEfNX1TDh6Du_pfNlxevCusg9vC7wQ';
+    const ssp = "375385362167e4f76";
+    const query = document.getElementById('inp').value;
+    const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${ssp}&q=${query}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        disA(data.items);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+
+  function disA(resu) {
+    const res = document.getElementById('resu');
+    res.innerHTML = '';
+
+    if (resu.length === 0) {
+      res.innerHTML = '<p>No result found.</p>';
+      return;
+    }
+
+    const answer = resu[0].snippet;
+    const anse = document.createElement('div');
+    anse.classList.add('result-item');
+    anse.innerHTML = `<div>${answer}</div>`;
+    res.appendChild(anse);
+  }
+</script>
+</body>
+</html>
