@@ -1,0 +1,94 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color:black;
+    }
+    
+    .cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .mdiv {
+      background-color: white;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      margin: 0;
+      color: #333333;
+      text-align: center;
+    }
+    
+    h6 {
+      margin: 0;
+      color:black;
+      text-align: center;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #resu {
+      margin-top: 20px;
+      padding: 10px;
+      background-color:white;
+      border-radius: 5px;
+    }
+    
+    .rsitm {
+      margin-top: 10px;
+    }
+    
+    .rsitm div {
+      color: black;
+    }
+    
+    .dvlpmi{
+    background:linear-gradient(74deg, rgb(36, 133, 244), rgb(160, 114, 203), rgb(217, 60, 121));
+    color:transparent;
+    background-clip:text;
+    }
+    
+    a{
+    text-decoration:none;
+    background:linear-gradient(74deg, rgb(36, 133, 244), rgb(160, 114, 203), rgb(217, 60, 121));
+    color:transparent;
+    background-clip:text;
+    }
+    
+    a:hover{
+    text-decoration:none;
+    background:linear-gradient(74deg, rgb(86, 133, 244), rgb(160, 14, 203), rgb(217, 120, 121));
+    color:transparent;
+    background-clip:text;
+    }
