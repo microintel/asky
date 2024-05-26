@@ -93,5 +93,6 @@ body {
     background-clip:text;
     }
 #im{
-border-radius:15px;
-}
+    
+    border-radius:50px;
+    }
